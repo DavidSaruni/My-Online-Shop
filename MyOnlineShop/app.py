@@ -9,8 +9,8 @@ app = Flask(__name__)
 # To create secure sessions set a strong encryption key
 app.secret_key = '12WEhr&88?8J*&9_'
 
-# Database  NorthWind
-# Table Items
+# Database  my_online_shop
+# Table bikes
 # Host   -  localhost
 # Username   root
 # Password  not set
@@ -28,7 +28,6 @@ app.secret_key = '12WEhr&88?8J*&9_'
 
 # Add 5 6 products
 # For image get a link online, a link ending with /png, jpg, jpeg, webp
-# or use modcom.co.ke/pics/
 #
 # step 2
 # create a route to fetch this products as rows
