@@ -1,4 +1,4 @@
-from flask import *
+from  flask import *
 # create a flask application
 app = Flask(__name__)
 # above __name__ means this is now your main app
@@ -46,11 +46,11 @@ import pymysql
 def home():
     # Connect to database
     connection = pymysql.connect(host='localhost', user='root',password='',
-                                 database='NorthWind')
+                                 database='my_online_shop')
 
     # Create a cursor to execute SQL Query
     cursor = connection.cursor()
-    cursor.execute('SELECT * FROM Items')
+    cursor.execute('SELECT * FROM bikes')
     # AFter executing the query above, get all rows
     rows = cursor.fetchall()
 
@@ -62,7 +62,7 @@ def home():
 def bikes():
     # Connect to database
     connection = pymysql.connect(host='localhost', user='root',password='',
-                                 database='NorthWind')
+                                 database='my_online_shop')
 
     # Create a cursor to execute SQL Query
     cursor = connection.cursor()
@@ -80,13 +80,13 @@ def bikes():
 def single(id):
 
     connection = pymysql.connect(host='localhost', user='root', password='',
-                                 database='NorthWind')
+                                 database='my_online_shop')
 
     # Create a cursor to execute SQL Query
     cursor = connection.cursor()
 
     # below %s is a place holder for id
-    cursor.execute('SELECT * FROM Items WHERE ProductID = %s', (id))
+    cursor.execute('SELECT * FROM bikes WHERE ProductID = %s', (id))
     # AFter executing the query above, get one row because
     row = cursor.fetchone()
 
@@ -99,7 +99,7 @@ def single(id):
 def singlebikes(id):
 
     connection = pymysql.connect(host='localhost', user='root', password='',
-                                 database='NorthWind')
+                                 database='my_online_shop')
 
     # Create a cursor to execute SQL Query
     cursor = connection.cursor()
@@ -136,7 +136,7 @@ def signup():
 
         else:
             connection = pymysql.connect(host='localhost', user='root',
-                                         password='',database='appledb')
+                                         password='',database='shopdb')
             cursor = connection.cursor()
 
 
@@ -160,7 +160,7 @@ def signin():
 
         # process login
         connection = pymysql.connect(host='localhost', user='root', password='',
-                                     database='appledb')
+                                     database='shopdb')
 
         # Create a cursor to execute SQL Query
         cursor = connection.cursor()
